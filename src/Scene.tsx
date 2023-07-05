@@ -1,10 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import loadObject from './util/loadObject';
+import { assetPath } from './util/paths';
+import createStars from './util/createStars';
 
 async function addObject(scene: THREE.Scene, name: string) {
-    const path = "./src/assets/";
-    const object = await loadObject(path + name + ".obj", path + name + ".mtl");
+    const object = await loadObject(assetPath + name + ".obj", assetPath + name + ".mtl");
     object.name = name;
 
     if (object !== undefined)
@@ -28,89 +29,65 @@ const ThreeScene: React.FC = () => {
         // Create the renderer
         const renderer = new THREE.WebGLRenderer();
         renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setClearColor(new THREE.Color("#1c1624"));
 
         // Add the renderer's canvas element to the DOM
         if (sceneRef.current)
             sceneRef.current.appendChild(renderer.domElement);
-
-        const light = new THREE.AmbientLight(0xFFFFFF);
+        // light source
+        const color = 0xffffff, intensity = 1;
+        const light = new THREE.DirectionalLight(color, intensity);
+        light.position.set(-1, 2, 4);
         scene.add(light);
+
+        const resizeRendererToDisplaySize = (renderer: THREE.WebGLRenderer) => {
+            const canvas = renderer.domElement;
+            const width = canvas.clientWidth;
+            const height = canvas.clientHeight;
+            const needResize = canvas.width !== width || canvas.height !== height;
+            // resize only when necessary
+            if (needResize) {
+                //3rd parameter `false` to change the internal canvas size
+                renderer.setSize(width, height, false);
+            }
+            return needResize;
+        };
+
+        const stars = createStars()
+        stars.forEach((star) => scene.add(star))
 
         const computer = addObject(scene, "computer");
 
-        // Keyboard event listeners
-        const handleKeyDown = (event: KeyboardEvent) => {
-            const moveDistance = 0.4;
-
-            switch (event.code) {
-                case "KeyW": // Move forward
-                    camera.position.z -= moveDistance;
-                    break;
-                case "KeyS": // Move backward
-                    camera.position.z += moveDistance;
-                    break;
-                case "KeyA": // Move left
-                    camera.position.x -= moveDistance;
-                    break;
-                case "KeyD": // Move right
-                    camera.position.x += moveDistance;
-                    break;
-                default:
-                    break;
-            }
-        };
-        document.addEventListener("keydown", handleKeyDown);
-
-        // Mouse event listeners
-        let isMouseDown = false;
-        let previousMouseX = 0;
-        let previousMouseY = 0;
-
-        const handleMouseDown = (event: MouseEvent) => {
-            isMouseDown = true;
-            previousMouseX = event.clientX;
-            previousMouseY = event.clientY;
-        };
-
-        const handleMouseUp = () => {
-            isMouseDown = false;
-        };
+        let mouseX = 0;
+        let mouseY = 0;
 
         const handleMouseMove = (event: MouseEvent) => {
-            if (!isMouseDown) return;
-
-            const sensitivity = 0.1;
-
-            const mouseMoveX = (event.clientX - previousMouseX) * sensitivity;
-            const mouseMoveY = (event.clientY - previousMouseY) * sensitivity;
-
-            camera.rotation.y += (mouseMoveX * Math.PI) / 180;
-            camera.rotation.x += (mouseMoveY * Math.PI) / 180;
-
-            previousMouseX = event.clientX;
-            previousMouseY = event.clientY;
+            mouseX = event.clientX;
+            mouseY = event.clientY;
         };
-
-        document.addEventListener("mousedown", handleMouseDown);
-        document.addEventListener("mouseup", handleMouseUp);
         document.addEventListener("mousemove", handleMouseMove);
 
         // Render loop
         const animate = () => {
             requestAnimationFrame(animate);
 
-            computer.then((obj) => (obj.rotation.x += 0.01));
+            computer.then((obj) => {
+                obj.rotation.x += 0.01;
+                obj.rotation.y += 0.01;
+            });
+
+            stars.forEach(star => {
+                star.position.x = mouseX * 0.0001
+                star.position.y = mouseY * -0.0001;
+            })
+
 
             renderer.render(scene, camera);
-        };
+        }
 
         animate();
 
         return () => {
-            // Clean up event listeners when the component unmounts
-            document.removeEventListener("keydown", handleKeyDown);
-            document.removeEventListener("mousedown", handleMouseDown);
-            document.removeEventListener("mouseup", handleMouseUp);
             document.removeEventListener("mousemove", handleMouseMove);
         };
     }, []);
