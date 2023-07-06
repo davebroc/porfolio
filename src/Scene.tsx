@@ -1,7 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
-import loadObject from './util/loadObject';
-import { assetPath } from './util/paths';
 import createStars from './util/createStars';
 
 import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
@@ -12,30 +10,8 @@ import { GammaCorrectionShader } from "three/examples/jsm/shaders/GammaCorrectio
 import { planetProperties } from './data/planetProperties';
 
 import CameraControls from 'camera-controls';
-
-
-async function addObject(scene: THREE.Scene, name: string, scale?: THREE.Vector3, position?: THREE.Vector3) {
-    const object = await loadObject(assetPath + name + ".obj", assetPath + name + ".mtl");
-    object.name = name;
-
-    if (scale) {
-        const scaleMatrix = new THREE.Matrix4()
-        scaleMatrix.scale(scale);
-        object.applyMatrix4(scaleMatrix)
-    }
-
-    if (position) {
-        const positionMatrix = new THREE.Matrix4()
-        positionMatrix.setPosition(position)
-        object.applyMatrix4(positionMatrix)
-    }
-
-
-    if (object !== undefined)
-        scene.add(object);
-    return object;
-}
-
+import addObject from './util/addObject';
+import createRoundedRectMesh from './Meshes/roundedRectMesh';
 
 const ThreeScene: React.FC = () => {
     const sceneRef = useRef<HTMLDivElement>(null);
@@ -74,7 +50,6 @@ const ThreeScene: React.FC = () => {
         light.position.set(-1, 2, 4);
         scene.add(light);
 
-
         const stars = createStars()
         stars.forEach((star) => scene.add(star))
 
@@ -83,7 +58,15 @@ const ThreeScene: React.FC = () => {
         planetProperties.forEach(planet => {
             addObject(scene, planet.name, planet.scale, planet.position)
                 .then(planet => planets.push(planet))
+
+            const roundedRectMesh = createRoundedRectMesh(2, 3, 0.5)
+
+            const translationMatrix = new THREE.Matrix4().makeTranslation(planet.position.x, planet.position.y, planet.position.z)
+            roundedRectMesh.applyMatrix4(translationMatrix)
+            scene.add(roundedRectMesh);
         })
+
+
 
         let mouseX = 0;
         let mouseY = 0;
@@ -134,7 +117,7 @@ const ThreeScene: React.FC = () => {
             requestAnimationFrame(animate);
 
             const rotate = (obj: THREE.Object3D<THREE.Event>) => {
-                obj.rotation.y += 0.005;
+                obj.rotation.y += 0.01;
             }
 
             planets.forEach((planet) => rotate(planet));
