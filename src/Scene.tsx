@@ -11,7 +11,7 @@ import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
 import { GammaCorrectionShader } from "three/examples/jsm/shaders/GammaCorrectionShader.js";
 import { planetProperties } from './data/planetProperties';
 
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import CameraControls from 'camera-controls';
 
 
 async function addObject(scene: THREE.Scene, name: string, scale?: THREE.Vector3, position?: THREE.Vector3) {
@@ -44,6 +44,7 @@ const ThreeScene: React.FC = () => {
     useEffect(() => {
         // Create the scene
         const scene = new THREE.Scene();
+        const clock = new THREE.Clock();
 
         // Create the camera
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -61,10 +62,11 @@ const ThreeScene: React.FC = () => {
         if (sceneRef.current)
             sceneRef.current.appendChild(renderer.domElement);
 
-        const controls = new OrbitControls(camera, renderer.domElement);
-        camera.position.z = 5;
-        controls.update();
-
+        CameraControls.install({ THREE });
+        const cameraControls = new CameraControls(camera, renderer.domElement);
+        cameraControls.moveTo(0, 0, 5)
+        const delta = clock.getDelta();
+        cameraControls.update(delta);
         // light source
         const color = 0xffffff, intensity = 1;
         const light = new THREE.DirectionalLight(color, intensity);
@@ -100,8 +102,13 @@ const ThreeScene: React.FC = () => {
             raycaster.setFromCamera(mouseVector, camera);
 
             const intersects = raycaster.intersectObjects(planets);
-            if (intersects.length > 0)
+            if (intersects.length > 0) {
                 outlinePass.selectedObjects.push(intersects[0].object)
+                const objPos = intersects[0].object.localToWorld(new THREE.Vector3(0, 0, 0))
+
+                const newCameraPos = new THREE.Vector3(objPos.x - 2, objPos.y + 2, objPos.z + 3)
+                cameraControls.setLookAt(newCameraPos.x, newCameraPos.y, newCameraPos.z, objPos.x, objPos.y, objPos.z, true)
+            }
         };
         document.addEventListener("mousemove", handleMouseMove);
 
@@ -133,7 +140,8 @@ const ThreeScene: React.FC = () => {
                 star.position.y = mouseY * -0.0001;
             })
 
-            controls.update();
+            const delta = clock.getDelta();
+            cameraControls.update(delta);
 
             composer.render();
         }
