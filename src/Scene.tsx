@@ -9,6 +9,7 @@ import { OutlinePass } from "three/examples/jsm/postprocessing/OutlinePass.js";
 import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass.js";
 import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
 import { GammaCorrectionShader } from "three/examples/jsm/shaders/GammaCorrectionShader.js";
+import { planetProperties } from './data/planetProperties';
 
 
 async function addObject(scene: THREE.Scene, name: string, scale?: THREE.Vector3, position?: THREE.Vector3) {
@@ -70,18 +71,12 @@ const ThreeScene: React.FC = () => {
         const stars = createStars()
         stars.forEach((star) => scene.add(star))
 
-        const planetScale = new THREE.Vector3(0.005, 0.005, 0.005);
-        const planetPosition = new THREE.Vector3(-2, 0.5, -3);
-
         const planets: THREE.Object3D<THREE.Event>[] = []
 
-        // addObject(scene, "planetAbout", planetScale, planetPosition).then(planet => planets.push(planet))
-        addObject(scene, "planetAbout", planetScale, planetPosition).then((planet) => {
-            planets.push(planet);
-            outlinePass.selectedObjects.push(planet);
-        });
-
-        // planets.forEach((planet) => outlinePass.selectedObjects.push(planet))
+        planetProperties.forEach(planet => {
+            addObject(scene, planet.name, planet.scale, planet.position)
+                .then(planet => planets.push(planet))
+        })
 
         let mouseX = 0;
         let mouseY = 0;
@@ -124,19 +119,8 @@ const ThreeScene: React.FC = () => {
         const animate = () => {
             requestAnimationFrame(animate);
 
-
-
             const rotate = (obj: THREE.Object3D<THREE.Event>) => {
                 obj.rotation.y += 0.005;
-                // obj.rotation.y += 0.01;
-
-                // if (isHovered) {
-                //     obj.rotation.y += 0.01;
-                //     obj.scale.applyMatrix4(new THREE.Matrix4().scale(new THREE.Vector3(1.2, 1.2, 1.2)))
-                // } else {
-                //     obj.rotation.y += 0.005;
-                //     // obj.scale.set(1, 1, 1);
-                // }
             }
 
             planets.forEach((planet) => rotate(planet));
