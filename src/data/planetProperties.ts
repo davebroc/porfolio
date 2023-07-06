@@ -5,7 +5,7 @@ export const planetProperties = [
     {
         name: "planetAbout",
         scale: new THREE.Vector3(0.005, 0.005, 0.005),
-        position: new THREE.Vector3(-2, 0.5, -3),
+        position: new THREE.Vector3(-5, 2, -3),
     },
 
     {
