@@ -64,9 +64,10 @@ const ThreeScene: React.FC = () => {
 
         CameraControls.install({ THREE });
         const cameraControls = new CameraControls(camera, renderer.domElement);
-        cameraControls.moveTo(0, 0, 5)
+        cameraControls.setLookAt(0, 0, 5, 0, 0, -5, true)
         const delta = clock.getDelta();
         cameraControls.update(delta);
+
         // light source
         const color = 0xffffff, intensity = 1;
         const light = new THREE.DirectionalLight(color, intensity);
@@ -107,7 +108,10 @@ const ThreeScene: React.FC = () => {
                 const objPos = intersects[0].object.localToWorld(new THREE.Vector3(0, 0, 0))
 
                 const newCameraPos = new THREE.Vector3(objPos.x - 2, objPos.y + 2, objPos.z + 3)
+
                 cameraControls.setLookAt(newCameraPos.x, newCameraPos.y, newCameraPos.z, objPos.x, objPos.y, objPos.z, true)
+                const delta = clock.getDelta();
+                cameraControls.update(delta);
             }
         };
         document.addEventListener("mousemove", handleMouseMove);
