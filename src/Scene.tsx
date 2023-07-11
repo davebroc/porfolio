@@ -65,12 +65,6 @@ const ThreeScene: React.FC = () => {
         planetProperties.forEach(planet => {
             addObject(scene, planet.name, planet.scale, planet.position)
                 .then(planet => planets.push(planet))
-
-            // const roundedRectMesh = createRoundedRectMesh(2, 3, 0.5)
-
-            // const translationMatrix = new THREE.Matrix4().makeTranslation(planet.position.x, planet.position.y, planet.position.z)
-            // roundedRectMesh.applyMatrix4(translationMatrix)
-            // scene.add(roundedRectMesh);
         })
 
 
@@ -167,7 +161,8 @@ const ThreeScene: React.FC = () => {
 
             {planetProperties.map(planet => planet.name === currentPlanet && (
                 <article className="w-96 h-96 rounded-md bg-blue-950 z-10">
-                    {planet.name}
+                    <h2>{planet.title}</h2>
+                    {planet.content}
                 </article>
             ))}
 

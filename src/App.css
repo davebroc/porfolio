@@ -6,6 +6,10 @@
     background-color: #1F1F1F;
 }
 
+* {
+    color: #ffffff
+}
+
 canvas {
     width: 100vw;
     height: 100vh;
