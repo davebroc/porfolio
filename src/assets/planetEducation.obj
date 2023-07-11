@@ -1,7 +1,7 @@
 # Blender 3.6.0
 # www.blender.org
 mtllib planetEducation.mtl
-o Sphere002
+o planetEducation
 v 127.009491 -66.419350 -52.051785
 v 127.345184 -68.792984 -47.113689
 v 119.552460 -75.846565 -59.208908

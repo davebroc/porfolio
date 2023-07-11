@@ -17,6 +17,13 @@ const ThreeScene: React.FC = () => {
     const sceneRef = useRef<HTMLDivElement>(null);
     const cameraRef = useRef<THREE.PerspectiveCamera | null>(null);
 
+    const [currentPlanet, setCurrentPlanet] = React.useState<string | null>(null);
+
+    const cameraPosOffsetMatrix = new THREE.Matrix4().makeTranslation(-2, 2, 3);
+    const zeroVector = new THREE.Vector3(0, 0, 0); // Replace with actual initial position
+    const focusedCameraPos = zeroVector.clone().applyMatrix4(cameraPosOffsetMatrix);
+    const cameraFocusedDistance = zeroVector.distanceTo(focusedCameraPos);
+
     useEffect(() => {
         // Create the scene
         const scene = new THREE.Scene();
@@ -59,11 +66,11 @@ const ThreeScene: React.FC = () => {
             addObject(scene, planet.name, planet.scale, planet.position)
                 .then(planet => planets.push(planet))
 
-            const roundedRectMesh = createRoundedRectMesh(2, 3, 0.5)
+            // const roundedRectMesh = createRoundedRectMesh(2, 3, 0.5)
 
-            const translationMatrix = new THREE.Matrix4().makeTranslation(planet.position.x, planet.position.y, planet.position.z)
-            roundedRectMesh.applyMatrix4(translationMatrix)
-            scene.add(roundedRectMesh);
+            // const translationMatrix = new THREE.Matrix4().makeTranslation(planet.position.x, planet.position.y, planet.position.z)
+            // roundedRectMesh.applyMatrix4(translationMatrix)
+            // scene.add(roundedRectMesh);
         })
 
 
@@ -90,15 +97,16 @@ const ThreeScene: React.FC = () => {
                 outlinePass.selectedObjects.push(intersects[0].object)
                 const objPos = intersects[0].object.localToWorld(new THREE.Vector3(0, 0, 0))
 
-                const newCameraPos = new THREE.Vector3(objPos.x - 2, objPos.y + 2, objPos.z + 3)
+                const newCameraPos = new THREE.Vector3(objPos.x, objPos.y, objPos.z)
+                newCameraPos.applyMatrix4(cameraPosOffsetMatrix)
 
                 cameraControls.setLookAt(newCameraPos.x, newCameraPos.y, newCameraPos.z, objPos.x, objPos.y, objPos.z, true)
+
                 const delta = clock.getDelta();
                 cameraControls.update(delta);
             }
         };
         document.addEventListener("mousemove", handleMouseMove);
-
 
         const renderPass = new RenderPass(scene, camera);
         composer.addPass(renderPass);
@@ -130,6 +138,20 @@ const ThreeScene: React.FC = () => {
             const delta = clock.getDelta();
             cameraControls.update(delta);
 
+            const cameraPosition = new THREE.Vector3();
+            cameraControls.getPosition(cameraPosition)
+
+            let isFocused = false;
+            planetProperties.forEach(planet => {
+                // fixed to 3 dp to prevent floating point errors
+                if (planet.position.distanceTo(cameraPosition).toPrecision(3) != cameraFocusedDistance.toPrecision(3))
+                    return
+                isFocused = true;
+                setCurrentPlanet(planet.name)
+            })
+            if (!isFocused)
+                setCurrentPlanet(null)
+
             composer.render();
         }
 
@@ -140,7 +162,17 @@ const ThreeScene: React.FC = () => {
         };
     }, []);
 
-    return <div ref={sceneRef}></div>;
+    return (
+        <div className="absolute" ref={sceneRef}>
+
+            {planetProperties.map(planet => planet.name === currentPlanet && (
+                <article className="w-96 h-96 rounded-md bg-blue-950 z-10">
+                    {planet.name}
+                </article>
+            ))}
+
+        </div>
+    );
 };
 
 export default ThreeScene;
