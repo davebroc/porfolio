@@ -7,7 +7,6 @@ export default function Experience() {
     return (
 
         <section id='experience' className='scroll-m-18'>
-            <SectionTitle>Experience</SectionTitle>
             <div className="flex gap-4 flex-wrap">
                 {experiences.map(ex => {
                     return (

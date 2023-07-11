@@ -12,6 +12,7 @@ import { planetProperties } from './data/planetProperties';
 import CameraControls from 'camera-controls';
 import addObject from './util/addObject';
 import createRoundedRectMesh from './Meshes/roundedRectMesh';
+import SectionTitle from './components/SectionTitle';
 
 const ThreeScene: React.FC = () => {
     const sceneRef = useRef<HTMLDivElement>(null);
@@ -66,8 +67,6 @@ const ThreeScene: React.FC = () => {
             addObject(scene, planet.name, planet.scale, planet.position)
                 .then(planet => planets.push(planet))
         })
-
-
 
         let mouseX = 0;
         let mouseY = 0;
@@ -160,8 +159,8 @@ const ThreeScene: React.FC = () => {
         <div className="absolute" ref={sceneRef}>
 
             {planetProperties.map(planet => planet.name === currentPlanet && (
-                <article className="w-96 h-96 rounded-md bg-blue-950 z-10">
-                    <h2>{planet.title}</h2>
+                <article className="w-96 h-fit p-4 rounded-md bg-blue-950 z-10">
+                    <SectionTitle>{planet.title}</SectionTitle>
                     {planet.content}
                 </article>
             ))}
