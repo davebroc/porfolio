@@ -1,1 +1,1 @@
-export const assetPath = "./src/assets/";
+export const assetPath = "/objects/";
