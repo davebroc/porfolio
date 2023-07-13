@@ -32,7 +32,7 @@ const planetExperience = new Planet(
     "planetExperience",
     "Experience",
     new THREE.Vector3(1, 1, 1),
-    new THREE.Vector3(2, -0.5, -5),
+    new THREE.Vector3(10, -0.5, -15),
     <Experience />
 );
 
@@ -48,7 +48,7 @@ const planetProjects = new Planet(
     "planetProjects",
     "Projects",
     new THREE.Vector3(0.005, 0.005, 0.005),
-    new THREE.Vector3(-10, -10, -10),
+    new THREE.Vector3(-10, -2, -20),
     <Projects />
 );
 
