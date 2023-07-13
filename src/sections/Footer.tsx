@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function Footer() {
     return (
         <footer className='bottom-0 absolute w-full p-5 bg-slate-600'>
@@ -17,9 +15,6 @@ export default function Footer() {
                 <a href='https://www.linkedin.com/in/david-brockbank/' target="_blank">
                     <img className='w-10 h-10 m-2' src='./LinkedIn_icon.svg.png' alt='LinkedIn' />
                 </a>
-
-
-
             </div>
 
         </footer>

@@ -1,6 +1,4 @@
-import React from 'react'
 import SectionTitle from '../components/SectionTitle.tsx'
-import SkillItem from '../components/SkillItem.tsx'
 import SkillCategory from '../components/SkillCategory.tsx'
 
 export default function Skills() {

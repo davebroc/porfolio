@@ -11,7 +11,6 @@ import { planetProperties } from './data/planetProperties';
 
 import CameraControls from 'camera-controls';
 import addObject from './util/addObject';
-import createRoundedRectMesh from './meshes/roundedRectMesh';
 import SectionTitle from './components/SectionTitle';
 
 const ThreeScene: React.FC = () => {

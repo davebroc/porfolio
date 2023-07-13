@@ -3,7 +3,6 @@ import experiences from '../data/experiences.ts'
 
 export default function Experience() {
     return (
-
         <section id='experience' className='scroll-m-18'>
             <div className="flex gap-4 flex-wrap">
                 {experiences.map(ex => {
@@ -12,9 +11,6 @@ export default function Experience() {
                     )
                 })}
             </div>
-
-
-
         </section>
     )
 }
