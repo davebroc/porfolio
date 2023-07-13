@@ -8,10 +8,14 @@ import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass.js";
 import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
 import { GammaCorrectionShader } from "three/examples/jsm/shaders/GammaCorrectionShader.js";
 import { planetProperties } from './data/planetProperties';
+import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
 
 import CameraControls from 'camera-controls';
 import addObject from './util/addObject';
 import SectionTitle from './components/SectionTitle';
+// import { Font, FontLoader } from 'three/examples/jsm/loaders/FontLoader.js';
+import loadFont from './util/loadFont';
+import addPlanet from './util/addPlanet';
 
 const ThreeScene: React.FC = () => {
     const sceneRef = useRef<HTMLDivElement>(null);
@@ -47,7 +51,7 @@ const ThreeScene: React.FC = () => {
 
         CameraControls.install({ THREE });
         const cameraControls = new CameraControls(camera, renderer.domElement);
-        cameraControls.setLookAt(0, 0, 5, 0, 0, -5, true)
+        cameraControls.setLookAt(-8, 4, 4, 0, 0, -5, true)
         const delta = clock.getDelta();
         cameraControls.update(delta);
 
@@ -62,10 +66,28 @@ const ThreeScene: React.FC = () => {
 
         const planets: THREE.Object3D<THREE.Event>[] = []
 
-        planetProperties.forEach(planet => {
-            addObject(scene, planet.name, planet.scale, planet.position)
-                .then(planet => planets.push(planet))
-        })
+
+        const fontPromise = loadFont('/fonts/helvetiker_regular.typeface.json')
+        fontPromise.then((font) => {
+            planetProperties.forEach(planet => {
+                addPlanet(scene, planet, font).then(planet => planets.push(planet))
+            })
+
+            const textGeometry = new TextGeometry('David Brockbank', {
+                font: font,
+                size: 0.2,
+                height: 0.05,
+                curveSegments: 12,
+                bevelEnabled: false,
+            });
+
+            const textMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
+
+            const textMesh = new THREE.Mesh(textGeometry, textMaterial);
+            textMesh.applyMatrix4(new THREE.Matrix4().scale(new THREE.Vector3(10, 10, 10)));
+            textMesh.position.set(0, 0, -35); // Set the position as needed
+            scene.add(textMesh);
+        });
 
         let mouseX = 0;
         let mouseY = 0;
@@ -116,11 +138,11 @@ const ThreeScene: React.FC = () => {
         const animate = () => {
             requestAnimationFrame(animate);
 
-            const rotate = (obj: THREE.Object3D<THREE.Event>) => {
-                obj.rotation.y += 0.01;
-            }
+            planets.forEach((planetGroup) => {
+                const planet = planetGroup.children[0]
 
-            planets.forEach((planet) => rotate(planet));
+                planet.rotation.y += 0.01;
+            });
 
             stars.forEach(star => {
                 star.position.x = mouseX * 0.0001
@@ -132,6 +154,8 @@ const ThreeScene: React.FC = () => {
 
             const cameraPosition = new THREE.Vector3();
             cameraControls.getPosition(cameraPosition)
+            console.log(cameraPosition);
+
 
             let isFocused = false;
             planetProperties.forEach(planet => {

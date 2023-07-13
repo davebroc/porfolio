@@ -2,45 +2,54 @@ import * as THREE from 'three';
 import About from '../sections/About';
 import Experience from '../sections/Experience';
 import Projects from '../sections/Projects';
+import Education from '../sections/Education';
 
-export const planetProperties = [
+export class Planet {
+    name: string;
+    title: string;
+    scale: THREE.Vector3;
+    position: THREE.Vector3;
+    content: JSX.Element | null;
 
-    {
-        name: "planetAbout",
-        title: "About",
-        scale: new THREE.Vector3(0.005, 0.005, 0.005),
-        position: new THREE.Vector3(-5, 2, -3),
-        content: <About />
-    },
+    constructor(name: string, title: string, scale: THREE.Vector3, position: THREE.Vector3, content: JSX.Element | null) {
+        this.name = name;
+        this.title = title;
+        this.scale = scale;
+        this.position = position;
+        this.content = content;
+    }
+}
 
-    {
-        name: "planetExperience",
-        title: "Experience",
-        scale: new THREE.Vector3(1, 1, 1),
-        position: new THREE.Vector3(2, -0.5, -5),
-        content: <Experience />
-    },
-    {
-        name: "planetEducation",
-        title: "Education",
-        scale: new THREE.Vector3(0.005, 0.005, 0.005),
-        position: new THREE.Vector3(4, 4, -8),
-        // content: <Education />
+const planetAbout = new Planet(
+    "planetAbout",
+    "About",
+    new THREE.Vector3(0.005, 0.005, 0.005),
+    new THREE.Vector3(-5, 2, -3),
+    <About />
+);
 
-    },
-    {
-        name: "planetProjects",
-        title: "Projects",
-        scale: new THREE.Vector3(0.03, 0.03, 0.03),
-        position: new THREE.Vector3(-10, -10, -10),
-        content: <Projects />
+const planetExperience = new Planet(
+    "planetExperience",
+    "Experience",
+    new THREE.Vector3(1, 1, 1),
+    new THREE.Vector3(2, -0.5, -5),
+    <Experience />
+);
 
-    },
-    // {
-    //     name: "planetSun",
-    //     title: "Sun",
-    //     scale: new THREE.Vector3(2, 2, 2),
-    //     position: new THREE.Vector3(0, 0, 22),
-    // },
+const planetEducation = new Planet(
+    "planetEducation",
+    "Education",
+    new THREE.Vector3(0.005, 0.005, 0.005),
+    new THREE.Vector3(4, 4, -8),
+    <Education />
+);
 
-]
+const planetProjects = new Planet(
+    "planetProjects",
+    "Projects",
+    new THREE.Vector3(0.005, 0.005, 0.005),
+    new THREE.Vector3(-10, -10, -10),
+    <Projects />
+);
+
+export const planetProperties: Planet[] = [planetAbout, planetExperience, planetEducation, planetProjects];
