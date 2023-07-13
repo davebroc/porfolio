@@ -1,4 +1,3 @@
-import React from 'react'
 import { educations } from '../data/educations'
 import EducationItem from '../components/EducationItem'
 

@@ -11,9 +11,7 @@ import { planetProperties } from './data/planetProperties';
 import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
 
 import CameraControls from 'camera-controls';
-import addObject from './util/addObject';
 import SectionTitle from './components/SectionTitle';
-// import { Font, FontLoader } from 'three/examples/jsm/loaders/FontLoader.js';
 import loadFont from './util/loadFont';
 import addPlanet from './util/addPlanet';
 
