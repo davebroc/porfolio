@@ -1,9 +1,11 @@
 import React from 'react'
+import { educations } from '../data/educations'
+import EducationItem from '../components/EducationItem'
 
 type Props = {}
 
 export default function Education({ }: Props) {
     return (
-        <div>Education</div>
+        educations.map(education => <EducationItem item={education} />)
     )
 }

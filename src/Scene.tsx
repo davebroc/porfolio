@@ -154,8 +154,6 @@ const ThreeScene: React.FC = () => {
 
             const cameraPosition = new THREE.Vector3();
             cameraControls.getPosition(cameraPosition)
-            console.log(cameraPosition);
-
 
             let isFocused = false;
             planetProperties.forEach(planet => {
