@@ -1,7 +1,5 @@
-import React from 'react'
 import ExperienceItem from '../components/ExperienceItem'
-import SectionTitle from '../components/SectionTitle'
-import experiences from '../data/experiences'
+import experiences from '../data/experiences.ts'
 
 export default function Experience() {
     return (

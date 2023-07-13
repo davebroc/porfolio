@@ -1,5 +1,4 @@
 export default [
-
     {
         company: "Iris Data Science",
         duration: "three months",

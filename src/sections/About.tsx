@@ -1,7 +1,3 @@
-import React from 'react'
-import SectionTitle from '../components/SectionTitle.tsx'
-
-
 export default function About() {
     return (
         <section id='about' className='scroll-mt-18 sm:scroll-mt-16'>
