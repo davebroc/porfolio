@@ -5,7 +5,6 @@ import Education from './Education'
 import Experience from './Experience'
 import Projects from './Projects'
 import Footer from './Footer'
-import SectionTitle from '../components/SectionTitle'
 
 type Props = {}
 

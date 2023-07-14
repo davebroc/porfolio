@@ -1,4 +1,3 @@
-import SectionTitle from "../components/SectionTitle";
 import { filesPath } from "../util/paths";
 
 export default function About() {
