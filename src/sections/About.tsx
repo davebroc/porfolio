@@ -8,11 +8,12 @@ export default function About() {
             <br></br>
             <p>
                 Experience with data science regression and classification modelling. As well as working with C, C++, Python,
-                Java, and JavaScript (React).            </p>
+                Java, and JavaScript (React).</p>
 
             <br></br>
             <p>Outside of my studies and career I enjoy socializing, snowboarding, the gym, and tramping.</p>
             <br></br>
+            <p>Interests in the Technology, Energy, and Space Industries.</p>
 
 
         </section>

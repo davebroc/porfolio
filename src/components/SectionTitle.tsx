@@ -6,7 +6,7 @@ type SectionTitleProps = {
 };
 
 const SectionTitle: React.FC<SectionTitleProps> = ({ children, id }) => {
-    return <h1 id={id} className='text-2xl my-5'>{children}</h1>;
+    return <h1 id={id} className='text-2xl mb-5'>{children}</h1>;
 };
 
 export default SectionTitle;
