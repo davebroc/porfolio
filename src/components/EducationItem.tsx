@@ -9,7 +9,7 @@ interface EducationItemProps {
 export default function EducationItem({ item }: EducationItemProps) {
 
     return (
-        < div className="my-4 w-110 rounded-lg overflow-hidden relative bg-slate-600 pb-4" >
+        <div className='bg-slate-600 m-3 pb-4 max-w-[95%] overflow-auto  rounded-md'>
             <img src={imagesPath + item.imagePath} alt={item.provider} className='w-full h-52 object-cover object-top' />
 
             <div className='w-11/12 m-auto'>

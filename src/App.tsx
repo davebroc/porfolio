@@ -1,14 +1,10 @@
 import './App.css';
-import Scene from './Scene';
-import WelcomePopup from './components/WelcomePopup';
+import WelcomeScreen from './components/WelcomeScreen';
 
 function App() {
 
   return (
-    <div>
-      <WelcomePopup />
-      <Scene />
-    </div>
+    <WelcomeScreen />
   );
 }
 
