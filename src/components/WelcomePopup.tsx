@@ -39,7 +39,7 @@ export default function WelcomePopup({ }: Props) {
             {isPopupOpen && (
 
                 <div className="fixed top-0 left-0 z-50 flex items-center justify-center w-screen h-screen bg-black bg-opacity-75">
-                    <article className=" w-1/2 bg-black p-4 rounded-md flex flex-col gap-12">
+                    <article className=" md:w-1/2 bg-black p-4 rounded-md flex flex-col gap-12">
 
                         <h1 className="text-3xl">Welcome to David's CV</h1>
 
