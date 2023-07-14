@@ -1,5 +1,3 @@
-import { imagesPath } from "../util/paths";
-
 class Project {
     title: string;
     imgURL: string;
