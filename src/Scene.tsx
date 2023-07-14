@@ -49,7 +49,7 @@ const ThreeScene: React.FC = () => {
 
         CameraControls.install({ THREE });
         const cameraControls = new CameraControls(camera, renderer.domElement);
-        cameraControls.setLookAt(-8, 4, 4, 0, 0, -5, true)
+        cameraControls.setLookAt(-8, 5, 4, 0, 0, -5, true)
         const delta = clock.getDelta();
         cameraControls.update(delta);
 
@@ -71,20 +71,28 @@ const ThreeScene: React.FC = () => {
                 addPlanet(scene, planet, font).then(planet => planets.push(planet))
             })
 
-            const textGeometry = new TextGeometry('David Brockbank', {
+            const fontProperties = {
                 font: font,
                 size: 0.2,
                 height: 0.05,
                 curveSegments: 12,
                 bevelEnabled: false,
-            });
-
+            }
             const textMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
 
-            const textMesh = new THREE.Mesh(textGeometry, textMaterial);
+            const textGeometryName = new TextGeometry('David Brockbank', fontProperties);
+            const textGeometryTitle = new TextGeometry('Software Engineer', fontProperties);
+
+            const textMesh = new THREE.Mesh(textGeometryName, textMaterial);
             textMesh.applyMatrix4(new THREE.Matrix4().scale(new THREE.Vector3(10, 10, 10)));
-            textMesh.position.set(0, 0, -35); // Set the position as needed
+            textMesh.position.set(0, 0, -35);
+
+            const textMeshTitle = new THREE.Mesh(textGeometryTitle, textMaterial);
+            textMeshTitle.applyMatrix4(new THREE.Matrix4().scale(new THREE.Vector3(5, 5, 5)));
+            textMeshTitle.position.set(0, -2, -35);
+
             scene.add(textMesh);
+            scene.add(textMeshTitle);
         });
 
         let mouseX = 0;

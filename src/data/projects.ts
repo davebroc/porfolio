@@ -56,14 +56,6 @@ const projects: Project[] = [
         ['React', 'Tailwind', 'PWA'],
         'PWA built at Iris Data Science. User-friendly with heavy offline capabilities to allow farmers to make entries while being offline in their fields.'
     ),
-    // new Project(
-    //     'Portfolio Website',
-    //     './portfolio.PNG',
-    //     ['React', 'Tailwind', 'THREE JS'],
-    //     'Two version website to display my CV through ',
-    //     undefined,
-    //     'https://github.com/davebroc/portfolio'
-    // ),
 ];
 
 export { projects, Project };

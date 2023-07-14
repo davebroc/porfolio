@@ -6,3 +6,7 @@
 <!-- - Jupiter by Poly by Google [CC-BY] via Poly Pizza -->
 - <a target="_blank" href="https://icons8.com/icon/57635/satellites">Satellites</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
 - Planet by Liz Reddington [CC-BY] via Poly Pizza
+- <a target="_blank" href="https://icons8.com/icon/10324/left-click">Left Click</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+- <a target="_blank" href="https://icons8.com/icon/10324/right-click">Right Click</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+- <a target="_blank" href="https://icons8.com/icon/10331/mouse-scrolling">Mouse Scrolling</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+- <a target="_blank" href="https://icons8.com/icon/11205/hand-cursor">Hand Cursor</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
