@@ -3,7 +3,7 @@ import { projects } from '../data/projects';
 
 export default function Projects() {
     return (
-        <section id='projects' className='scroll-mt-18 sm:scroll-mt-16'>
+        <section id='projects' className='scroll-mt-28 '>
             <div className="flex flex-wrap gap-x-5 justify-around">
                 {projects.map(project => (
                     <ProjectItem project={project} key={project.title} />

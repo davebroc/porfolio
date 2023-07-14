@@ -10,6 +10,10 @@
     color: #ffffff
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 canvas {
     width: 100vw;
     height: 100vh;

@@ -5,6 +5,7 @@ import Education from './Education'
 import Experience from './Experience'
 import Projects from './Projects'
 import Footer from './Footer'
+import SectionTitle from '../components/SectionTitle'
 
 type Props = {}
 
@@ -14,9 +15,13 @@ export default function MobileVersion({ }: Props) {
             <Navbar />
             <Welcome />
             <div className="max-w-5xl mx-auto w-11/12 " >
+                <h2 className='text-2xl my-5'>About</h2>
                 <About />
+                <h2 className='text-2xl my-5'>Education</h2>
                 <Education />
+                <h2 className='text-2xl my-5'>Experience</h2>
                 <Experience />
+                <h2 className='text-2xl my-5'>Projects</h2>
                 <Projects />
             </div>
             <Footer />

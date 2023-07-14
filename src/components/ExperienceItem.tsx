@@ -14,7 +14,7 @@ const ExperienceItem: React.FC<ExperienceItemProps> = (props) => {
         <div className='bg-slate-600 m-3 p-2 max-w-[95%] overflow-auto sm:p-4 rounded-md'>
             <h3 className='text-xl mb-3'>{ex.title}</h3>
             <p>
-                At {ex.company}: {ex.tasks}
+                At {ex.company} {ex.tasks}
             </p>
         </div>
     );

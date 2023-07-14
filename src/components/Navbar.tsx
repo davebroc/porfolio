@@ -8,10 +8,9 @@ function Navbar() {
             <h1 className="hidden sm:inline font-bold">David Brockbank</h1>
             <div className="flex justify-between gap-4 sm:gap-24 w-fit">
                 <a href='#about'>About</a>
+                <a href='#education'>Education</a>
                 <a href='#experience'>Experience</a>
                 <a href='#projects'>Projects</a>
-                {/* <a href='#skills'>Skills</a> */}
-                <a href='#contact'>Contact</a>
             </div>
 
         </nav>

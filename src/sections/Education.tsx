@@ -5,6 +5,8 @@ type Props = {}
 
 export default function Education({ }: Props) {
     return (
-        educations.map(education => <EducationItem item={education} />)
+        <section id='education' className='scroll-mt-28 '>
+            {educations.map(education => <EducationItem item={education} />)}
+        </section>
     )
 }

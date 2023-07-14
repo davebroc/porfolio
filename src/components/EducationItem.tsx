@@ -9,8 +9,8 @@ interface EducationItemProps {
 export default function EducationItem({ item }: EducationItemProps) {
 
     return (
-        <div className='bg-slate-600 m-3 pb-4 max-w-[95%] overflow-auto  rounded-md'>
-            <img src={imagesPath + item.imagePath} alt={item.provider} className='w-full h-52 object-cover object-top' />
+        <div className='bg-slate-600 m-3 pb-4 w-fit max-w-[95%] overflow-auto  rounded-md'>
+            <img src={imagesPath + item.imagePath} alt={item.provider} className='w-full h-52 object-cover  object-top' />
 
             <div className='w-11/12 m-auto'>
                 <div className='flex justify-between'>
