@@ -6,31 +6,30 @@ export default [
         title: "Implementation Consultant",
     },
     {
-        company: "MTF Finance",
-        duration: "three months",
-        tasks: ``,
-        title: "Software Engineer Intern",
-    },
-    {
         company: "Iris Data Science",
         duration: "three months",
-        tasks: `Designed and built a progressive web application, GoToGrow, within a team of three. 
-        GoToGrow streamlines farming data management, it also gives fertilizer recommendations to farmers, calculates fertilizer mixes, and much more. 
-         Some of my tasks included: implementing extensive offline capabilities, workflow design, and front-end development.
-         It is currently being used by farmers in NZ, Europe, and USA.`,
+        tasks: `Design and development work on a agriculcual farming PWA for Agriganics. 
+        Implemented extensive offline capabilities, workflow design, and front-end development.
+        It is currently being used by farmers in NZ, Europe, and USA.`,
         title: "Software developer",
+    },
+    {
+        company: "MTF Finance",
+        duration: "three months",
+        tasks: `C# work on upgrading MTF's internal lending software.`,
+        title: "Software Engineer Intern",
     },
     {
         company: "University of Otago",
         duration: "four months",
-        tasks: `Helped students with practical coding issues in the paper: COSC202 - Software Development.`,
-        title: "200-Level Computer Science Tutor/Demonstrator",
+        tasks: `Guided students completing lab work for COSC202 - Software Development.`,
+        title: "Computer Science Demonstrator",
     },
     {
         company: "Brockbank Properties",
         duration: "five years of summer full-time",
-        tasks: "Broad set of responsibilities such as installing electric fencing, building frames, concrete pouring, and painting. One summer involved leading a plastering team with minimal supervision.",
-        title: "Plasterer and Labourer",
+        tasks: "Installing electric fencing, building frames, concrete pouring, painting, and plastering. Occasional leadings of small teams.",
+        title: "Plasterer, Labourer",
     }
 
 ]
