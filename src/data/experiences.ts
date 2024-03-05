@@ -2,7 +2,7 @@ export default [
     {
         company: "Fast Enterprises",
         duration: "six months",
-        tasks: `Application support work for Inland Revenue's tax software. Diagnosed and solved bugs using mixture of C# code and configuration. Worked closely with non-technacal IR staff to get requirements for solutions I would then implement. `,
+        tasks: `Application support work for Inland Revenue's tax software. Diagnosed and solved bugs using mixture of C# code and configuration. Worked closely with non-technacal IR staff to get requirements for solutions that I would then implement. `,
         title: "Implementation Consultant",
     },
     {
@@ -27,7 +27,7 @@ export default [
     },
     {
         company: "Brockbank Properties",
-        duration: "five years of summer full-time",
+        duration: "five summers",
         tasks: "Installing electric fencing, building frames, concrete pouring, painting, and plastering. Occasional leadings of small teams.",
         title: "Plasterer, Labourer",
     }
