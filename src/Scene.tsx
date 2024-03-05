@@ -184,15 +184,12 @@ const ThreeScene: React.FC = () => {
 
     return (
         <div className="absolute" ref={sceneRef}>
-
             {planetProperties.map(planet => planet.name === currentPlanet && (
-                <article className="w-96 h-fit p-4 rounded-md bg-blue-950 z-10">
-                    <SectionTitle>{planet.title}</SectionTitle>
-                    {planet.content}
-                </article>
-            ))}
+                <> {planet.content}</>
+            ))
+            }
 
-        </div>
+        </div >
     );
 };
 
