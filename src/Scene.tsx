@@ -184,11 +184,12 @@ const ThreeScene: React.FC = () => {
 
     return (
         <div className="absolute" ref={sceneRef}>
-            {planetProperties.map(planet => planet.name === currentPlanet && (
-                <> {planet.content}</>
-            ))
-            }
-
+            <div className='relative'>
+                {planetProperties.map(planet => planet.name === currentPlanet && (
+                    <> {planet.content}</>
+                ))
+                }
+            </div>
         </div >
     );
 };
