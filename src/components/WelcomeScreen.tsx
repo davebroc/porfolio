@@ -57,10 +57,10 @@ export default function WelcomeScreen({ }: Props) {
                             )}
                         </section>
 
-                        <nav className='flex justify-between mt-2'>
-                            < button className=" bg-gray-700 p-2 rounded-md hover:text-gray-200" onClick={changeToMobile}>
+                        <nav className='flex  justify-end smt-2'>
+                            {/* < button className=" bg-gray-700 p-2 rounded-md hover:text-gray-200" onClick={changeToMobile}>
                                 Mobile Friendly Version
-                            </button>
+                            </button> */}
                             < button className=" bg-blue-600 p-2 rounded-md hover:text-gray-700" onClick={closePopup}>
                                 Okay
                             </button>

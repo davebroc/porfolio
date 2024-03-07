@@ -27,7 +27,7 @@ const educations: Education[] = [
     new Education(
         "University of Otago",
         "Bachelor of Science",
-        "Major in Computer Science, Minor in Energy Science and Technology",
+        "Major in Computer Science, Minor in Energy Management",
         "8.3/9.0 (A)",
         "/files/otago-transcript.pdf",
         "/otago.jpg",

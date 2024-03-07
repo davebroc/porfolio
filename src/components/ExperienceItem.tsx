@@ -11,7 +11,7 @@ export default function ExperienceItem({ item }: ExperienceItemProps) {
             {item.imagePath !== undefined &&
                 <img src={imagesPath + item.imagePath} alt={item.company} className='w-full h-52 object-cover  object-top' />
             }
-            <div className='w-11/12 m-auto my-5'>
+            <div className='w-11/12 m-auto mb-5 mt-4'>
 
                 <h3 className='text-xl'>{item.title}</h3>
                 <h2 className='text-lg font-bold mb-1'>{item.company}</h2>
