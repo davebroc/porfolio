@@ -13,10 +13,10 @@ export default function WelcomeScreen({ }: Props) {
     const closePopup = () => {
         setPopupOpen(false);
     };
-    const changeToMobile = () => {
-        setPopupOpen(false);
-        setMobile(true);
-    };
+    // const changeToMobile = () => {
+    //     setPopupOpen(false);
+    //     setMobile(true);
+    // };
 
     const controls = [
         {
