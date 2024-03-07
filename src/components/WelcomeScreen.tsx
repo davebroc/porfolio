@@ -8,7 +8,7 @@ type Props = {}
 
 export default function WelcomeScreen({ }: Props) {
     const [isPopupOpen, setPopupOpen] = useState(true);
-    const [isMobile, setMobile] = useState(false);
+    // const [isMobile, setMobile] = useState(false);
 
     const closePopup = () => {
         setPopupOpen(false);
