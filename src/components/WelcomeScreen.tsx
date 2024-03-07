@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { iconsPath } from '../util/paths';
 
 import Scene from '../Scene';
-import MobileVersion from '../sections/MobileVersion';
+// import MobileVersion from '../sections/MobileVersion';
 
 type Props = {}
 
