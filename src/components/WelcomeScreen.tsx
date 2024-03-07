@@ -71,13 +71,13 @@ export default function WelcomeScreen({ }: Props) {
             )
             }
 
-            {isMobile && (
+            {/* {isMobile && (
                 <MobileVersion />
-            )}
+            )} */}
 
-            {!isMobile && (
-                <Scene />
-            )}
+            {/* {!isMobile && ( */}
+            <Scene />
+            {/* )} */}
         </>
     )
 }
