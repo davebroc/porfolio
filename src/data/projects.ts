@@ -25,10 +25,18 @@ class Project {
 
 const projects: Project[] = [
     new Project(
+        'Duck game (To be named)',
+        'duck-game.png',
+        ['GDScript', 'Godot'],
+        'In progress local multiplayer game in Godot. Features unrealistic jumping abilities, fire breathing, and ducks',
+        undefined,
+        "https://github.com/davebroc/DuckGame"
+    ),
+    new Project(
         'Birds of Aotearoa',
         'birds.JPG',
         ['JS', 'CSS', 'MongoDB', 'NodeJS'],
-        'A static website displaying birds native to Aotearoa. Currently a Front-end application with the back-end in development.',
+        'A static website displaying birds native to Aotearoa. Back-end version was developed separately',
         'https://davebroc.github.io/Birds-of-Aotearoa',
         'https://github.com/davebroc/Birds-of-Aotearoa'
     ),
@@ -54,6 +62,8 @@ const projects: Project[] = [
         ['React', 'Tailwind', 'PWA'],
         'PWA built at Iris Data Science. User-friendly with heavy offline capabilities to allow farmers to make entries while being offline in their fields.'
     ),
+
+
 ];
 
 export { projects, Project };

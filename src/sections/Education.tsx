@@ -1,11 +1,9 @@
 import { educations } from '../data/educations'
 import EducationItem from '../components/EducationItem'
 
-type Props = {}
-
-export default function Education({ }: Props) {
+export default function Education() {
     return (
-        <section id='education' className='scroll-mt-28 '>
+        <section id='education' className='scroll-mt-28 p-5'>
             {educations.map(education => <EducationItem item={education} />)}
         </section>
     )
