@@ -28,8 +28,8 @@ const educations: Education[] = [
         "University of Otago",
         "Bachelor of Science",
         "Major in Computer Science, Minor in Energy Science and Technology",
-        "8.4/9.0 (A)",
-        "/otago-transcript.pdf",
+        "8.3/9.0 (A)",
+        "/files/otago-transcript.pdf",
         "/otago.jpg",
     ),
 ];
