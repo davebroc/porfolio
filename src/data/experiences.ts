@@ -2,13 +2,13 @@ export default [
     {
         company: "Fast Enterprises",
         duration: "six months",
-        tasks: `Application support work for Inland Revenue's tax software. Diagnosed and solved bugs using mixture of C# code and configuration. Worked closely with non-technacal IR staff to get requirements for solutions that I would then implement. `,
+        tasks: `Application support work for Inland Revenue's tax software. Diagnosed and solved bugs using mixture of C# code and configuration. Worked closely with non-technical IR staff to get requirements for solutions that I would then implement. `,
         title: "Implementation Consultant",
     },
     {
         company: "Iris Data Science",
         duration: "three months",
-        tasks: `Design and development work on a agriculcual farming PWA for Agriganics. 
+        tasks: `Design and development work on a agricultural farming PWA for Agriganics. 
         Implemented extensive offline capabilities, workflow design, and front-end development.
         It is currently being used by farmers in NZ, Europe, and USA.`,
         title: "Software developer",
