@@ -81,6 +81,7 @@ const ThreeScene: React.FC = () => {
 
             const textGeometryName = new TextGeometry('David Brockbank', fontProperties);
             const textGeometryTitle = new TextGeometry('Software Engineer', fontProperties);
+            const textGeometryEmail = new TextGeometry('davebrockbank02@gmail.com', fontProperties);
 
             const textMesh = new THREE.Mesh(textGeometryName, textMaterial);
             textMesh.applyMatrix4(new THREE.Matrix4().scale(new THREE.Vector3(10, 10, 10)));
@@ -89,9 +90,14 @@ const ThreeScene: React.FC = () => {
             const textMeshTitle = new THREE.Mesh(textGeometryTitle, textMaterial);
             textMeshTitle.applyMatrix4(new THREE.Matrix4().scale(new THREE.Vector3(5, 5, 5)));
             textMeshTitle.position.set(0, -2, -35);
-
+    
+            const textMeshEmail = new THREE.Mesh(textGeometryEmail, textMaterial);
+            textMeshEmail.applyMatrix4(new THREE.Matrix4().scale(new THREE.Vector3(5, 5, 5)));
+            textMeshEmail.position.set(0, -4, -35);
+            
             scene.add(textMesh);
             scene.add(textMeshTitle);
+            scene.add(textMeshEmail);
         });
 
         let mouseX = 0;

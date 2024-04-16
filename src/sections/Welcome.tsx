@@ -8,6 +8,7 @@ export default function Welcome() {
                 <h3 className="bg-opacity-50 mt-10 text-4xl font-bold block">
                     Software Engineer
                 </h3>
+
             </div>
         </header>
     )
