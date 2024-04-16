@@ -25,7 +25,7 @@ class Project {
 
 const projects: Project[] = [
     new Project(
-        'Duck game (To be named)',
+        'Duck game',
         'duck-game.png',
         ['GDScript', 'Godot'],
         'In progress local multiplayer game in Godot. Features unrealistic jumping abilities, fire breathing, and ducks',
@@ -36,7 +36,7 @@ const projects: Project[] = [
         'Birds of Aotearoa',
         'birds.JPG',
         ['JS', 'CSS', 'MongoDB', 'NodeJS'],
-        'A static website displaying birds native to Aotearoa. Back-end version was developed separately',
+        'A static website displaying birds native to Aotearoa',
         'https://davebroc.github.io/Birds-of-Aotearoa',
         'https://github.com/davebroc/Birds-of-Aotearoa'
     ),
@@ -44,7 +44,7 @@ const projects: Project[] = [
         'Blackjack',
         'blackjack.JPG',
         ['React', 'JS', 'CSS'],
-        'A basic game of Blackjack built using React. Betting, rule customization, and user training are under development.',
+        'A basic game of Blackjack built using React',
         'https://davebroc.github.io/Blackjack/',
         'https://github.com/davebroc/Blackjack'
     ),

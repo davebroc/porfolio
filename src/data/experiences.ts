@@ -26,7 +26,7 @@ const experiences = [
         company: "Fast Enterprises",
         imagePath: "fast.jpg",
         duration: "six months",
-        tasks: `Application support work for Inland Revenue's tax software. Diagnosed and solved bugs using mixture of C# code and configuration. Worked closely with non-technical IR staff to get requirements for solutions that I would then implement. `,
+        tasks: `Application support work for Inland Revenue's tax software. Diagnosed and solved bugs using C# code and configuration. Worked closely with non-technical IR staff to get requirements for solutions that I would then implement. `,
         title: "Implementation Consultant",
     },
     {
