@@ -2,23 +2,16 @@ import { useState } from 'react';
 import { filesPath, iconsPath } from '../util/paths';
 
 import Scene from '../Scene';
-import createPDF from '../PDF/pdf';
-// import MobileVersion from '../sections/MobileVersion';
+// import createPDF from '../PDF/pdf';
 
 type Props = {}
 
 export default function WelcomeScreen({ }: Props) {
     const [isPopupOpen, setPopupOpen] = useState(true);
-    // const [isMobile, setMobile] = useState(false);
 
     const closePopup = () => {
         setPopupOpen(false);
     };
-    // const changeToMobile = () => {
-    //     setPopupOpen(false);
-    //     setMobile(true);
-    // };
-
     const controls = [
         {
             icon: "hover.png",

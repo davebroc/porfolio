@@ -1,9 +1,5 @@
-import EducationItem from "../components/EducationItem";
 import { educations } from "../data/educations";
 import { experiences } from "../data/experiences";
-import Education from "../sections/Education";
-
-
 
 export default function createPDF() {
     
