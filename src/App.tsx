@@ -1,11 +1,13 @@
 import './App.css';
 import WelcomeScreen from './components/WelcomeScreen';
 
-function App() {
 
+function App() {
+  
   return (
     <WelcomeScreen />
   );
 }
 
 export default App;
+

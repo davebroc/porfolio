@@ -14,9 +14,11 @@
     "postprocessing": "^6.32.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "three": "^0.154.0"
+    "three": "^0.154.0",
+    "tsc": "^2.0.4"
   },
   "devDependencies": {
+    "@types/node": "^20.12.7",
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
     "@types/three": "^0.152.1",
