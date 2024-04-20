@@ -93,7 +93,7 @@ Software Engineer who enjoys collaboration, problem solving, and making things.
     ${experiences.map(experience => `
     \\textbf{${experience.company}}\\\\
     \\textbf{${experience.title}}\\\\
-    ${experience.tasks}\\\\
+    ${experience.tasks.replace('#', "\\#")}\\\\
     ` ).join("")}  
     \\end{minipage}    
     
