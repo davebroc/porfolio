@@ -7,7 +7,7 @@ type ExperienceItemProps = {
 
 export default function ExperienceItem({ item }: ExperienceItemProps) {
     return (
-        <div className='bg-slate-600 my-4 max-w-[95%]  w-110 overflow-auto  rounded-lg'>
+        <div className='bg-slate-600/100  my-4 max-w-[95%]  w-110 overflow-auto  rounded-lg'>
             {item.imagePath !== undefined &&
                 <img src={imagesPath + item.imagePath} alt={item.company} className='w-full h-52 object-cover  object-top' />
             }

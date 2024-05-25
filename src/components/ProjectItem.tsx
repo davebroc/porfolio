@@ -11,7 +11,7 @@ export default function ProjectItem({ project }: ProjectItemProps) {
 
 
     return (
-        <div className="my-4 w-110 rounded-lg overflow-hidden relative bg-slate-600">
+        <div className="my-4 w-110 rounded-lg overflow-hidden relative bg-slate-600/100">
             <img src={imagesPath + imgURL} alt={title} className='w-full h-52 object-cover object-top' />
 
             <div className='w-11/12 m-auto'>

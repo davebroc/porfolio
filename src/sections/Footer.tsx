@@ -1,6 +1,6 @@
 export default function Footer() {
     return (
-        <footer className='bottom-0 absolute w-full p-5 bg-slate-600'>
+        <footer className='bottom-0 absolute w-full p-5 bg-slate-600/100'>
             <p className='sm:text-center text-left '>
                 All rights reserved
             </p>
