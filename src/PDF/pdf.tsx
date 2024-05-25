@@ -12,7 +12,13 @@ try {
     \\usepackage[utf8]{inputenc}
     \\usepackage[default]{raleway}
     \\usepackage[margin=1cm, a4paper]{geometry}
-    
+    \\usepackage{xcolor}
+    \\hypersetup{
+        colorlinks,
+        linkcolor={red!50!black},
+        citecolor={blue!50!black},
+        urlcolor={blue!80!black}
+    }
     %------------------------------------------------------------------ Variablen
     
     \\newlength{\\rightcolwidth}
@@ -103,7 +109,7 @@ Software Engineer who enjoys collaboration, problem solving, and making things.
     
     \\section*{Education}
     ${educations.map(education => `
-    \\textbf{${education.provider}}
+    \\textbf{${education.provider}}\\\\
     \\textbf{${education.qualification}}\\\\
     ${education.majorMinor}\\\\
     GPA: ${education.gpa}\\\\
@@ -114,8 +120,9 @@ Software Engineer who enjoys collaboration, problem solving, and making things.
     
     \\begin{minipage}[t]{0.7\\textwidth}
     \\section*{Awards}
+    Stephen Bowater Memorial Scholarship\\\\
     University of Otago 150th Entrance Scholarship\\\\
-    Stephen Bowater Memorial Scholarship
+    University of Otago Scholarship in Science
     \\bigskip
     
   
@@ -136,25 +143,20 @@ Software Engineer who enjoys collaboration, problem solving, and making things.
     \\bigskip
     \\bigskip
     \\bigskip
-    \\bigskip
-    \\bigskip
-    \\bigskip
-    \\bigskip
-    \\bigskip
-    \\bigskip
-    \\bigskip
-    \\bigskip
-    \\bigskip
-    \\bigskip
-    \\bigskip
-    \\bigskip
 \\setlength{\\parindent}{0pt}
 \\begin{minipage}[t]{\\rightcolwidth}
-\\begin{center}\\fontfamily{\\sfdefault}\\selectfont \\color{black!70}
-{\\small David Brockbank\\icon{\\faEnvelopeO}{cvgreen}{} davebrockbank02@gmail.com  \\icon{\\faPhone}{cvgreen}{} (+64) 21493283 \\newline\\icon{\\faAt}{cvgreen}{} \\protect\\url{https://davebroc.github.io/}
-}
+
+\\fontfamily{\\sfdefault}\\selectfont \\color{black!70}
+{\\begin{center}\\small 
+    \\href{mailto:davebrockbank02@gmail.com}{\\icon{\\faEnvelopeO}{cvgreen}{} davebrockbank02@gmail.com}  
+    \\href{tel:021493283}{\\icon{\\faPhone}{cvgreen}{} (+64) 21493283}  
+ \\end{center}
+\\begin{center}
+    \\href{https://davebroc.github.io/}{\\icon{\\faGlobe}{cvgreen}{} https://davebroc.github.io/}
 \\end{center}
+}
 \\end{minipage}
+
 
 
     

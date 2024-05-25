@@ -53,6 +53,13 @@ const experiences = [
         title: "Computer Science Demonstrator",
     },
     {
+        company: "Thames Treasury",
+        imagePath: "treasury.jpg",
+        duration: "three months",
+        tasks: "Digitized historical records and photographs relevant to the Thames-Coromandel area.",
+        title: "Digital Archiver",
+    },
+    {
         company: "Brockbank Properties",
         imagePath: undefined,
         duration: "five summers",

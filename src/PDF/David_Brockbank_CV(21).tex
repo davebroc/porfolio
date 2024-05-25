@@ -1,10 +1,16 @@
-\documentclass[lighthipster]{simplehipstercv}
+\documentclass[withoutsidebar]{simplehipstercv}
     % available options are: darkhipster, lighthipster, pastel, allblack, grey, verylight, withoutsidebar
     % withoutsidebar
     \usepackage[utf8]{inputenc}
     \usepackage[default]{raleway}
     \usepackage[margin=1cm, a4paper]{geometry}
-    
+    \usepackage{xcolor}
+    \hypersetup{
+        colorlinks,
+        linkcolor={red!50!black},
+        citecolor={blue!50!black},
+        urlcolor={blue!80!black}
+    }
     %------------------------------------------------------------------ Variablen
     
     \newlength{\rightcolwidth}
@@ -13,7 +19,7 @@
     \setlength{\rightcolwidth}{0.75\textwidth}
     
     %------------------------------------------------------------------
-    \title{New Simple CV}
+    \title{CV}
     \author{\LaTeX{} Ninja}
     \date{June 2019}
     
@@ -28,55 +34,55 @@
     
     
     % this has to be here so the paracols starts..
-    \subsection*{}
-    \vspace{4em}
+    % \subsection*{}
+    \vspace{8em}
     
-    \setlength{\columnsep}{1.5cm}
-    \columnratio{0.23}[0.75]
-    \begin{paracol}{2}
-    \hbadness5000
-    %\backgroundcolor{c[1]}[rgb]{1,1,0.8} % cream yellow for column-1 %\backgroundcolor{g}[rgb]{0.8,1,1} % \backgroundcolor{l}[rgb]{0,0,0.7} % dark blue for left margin
+    % \setlength{\columnsep}{1.5cm}
+%     \columnratio{0.23}[0.75]
+%     \begin{paracol}{2}
+%     \hbadness5000
+%     %\backgroundcolor{c[1]}[rgb]{1,1,0.8} % cream yellow for column-1 %\backgroundcolor{g}[rgb]{0.8,1,1} % \backgroundcolor{l}[rgb]{0,0,0.7} % dark blue for left margin
     
-    \paracolbackgroundoptions
+%     \paracolbackgroundoptions
     
-    % 0.9,0.9,0.9 -- 0.8,0.8,0.8
+%     % 0.9,0.9,0.9 -- 0.8,0.8,0.8
     
     
-    \footnotesize
-    {\setasidefontcolour
-    \flushright
-    \begin{center}
-    \end{center}
+%     \footnotesize
+%     {\setasidefontcolour
+%     \flushright
+%     \begin{center}
+%     \end{center}
     
-    \bg{cvgreen}{white}{About me}\\[0.5em]
+%     \bg{cvgreen}{white}{About me}\\[0.5em]
     
-    {\footnotesize
-Software Engineer who enjoys collaboration, problem solving, and making things.
-}
+%     {\footnotesize
+% Software Engineer who enjoys collaboration, problem solving, and making things.
+% }
     
-    \bigskip
+%     \bigskip
     
-    \bg{cvgreen}{white}{Interests}\\[0.5em]
-    Training in the gym,
-    video games, 
-    socializing, 
-    snowboarding, 
-    tramping, 
-    physics,
-    and 
-    space
-    \bigskip
+%     \bg{cvgreen}{white}{Interests}\\[0.5em]
+%     Training in the gym,
+%     video games, 
+%     socializing, 
+%     snowboarding, 
+%     tramping, 
+%     physics,
+%     and 
+%     space
+%     \bigskip
 
-    \bg{cvgreen}{white}{Porfolio}\\[0.5em]
-    \href{https://davebroc.github.io/}{https://davebroc.github.io/}
+%     \bg{cvgreen}{white}{Porfolio}\\[0.5em]
+%     \href{https://davebroc.github.io/}{https://davebroc.github.io/}
 
   
-    \phantom{turn the page}
+%     \phantom{turn the page}
     
-    \phantom{turn the page}
-    }
+%     \phantom{turn the page}
+%     }
     %-----------------------------------------------------------
-    \switchcolumn
+    % \switchcolumn
     
     \small
 
@@ -101,6 +107,10 @@ Software Engineer who enjoys collaboration, problem solving, and making things.
     \textbf{Computer Science Demonstrator}\\
     Guided students completing lab work for COSC202 - Software Development.\\
     
+    \textbf{Thames Treasury}\\
+    \textbf{Digital Archiver}\\
+    Digitized historical records and photographs relevant to the Thames-Coromandel area.\\
+    
     \textbf{Brockbank Properties}\\
     \textbf{Plasterer, Labourer}\\
     Installing electric fencing, building frames, concrete pouring, painting, and plastering. Occasional leadings of small teams.\\
@@ -113,7 +123,7 @@ Software Engineer who enjoys collaboration, problem solving, and making things.
     
     \section*{Education}
     
-    \textbf{University of Otago}
+    \textbf{University of Otago}\\
     \textbf{Bachelor of Science}\\
     Major in Computer Science, Minor in Energy Management\\
     GPA: 8.3/9.0 (A)\\
@@ -124,8 +134,9 @@ Software Engineer who enjoys collaboration, problem solving, and making things.
     
     \begin{minipage}[t]{0.7\textwidth}
     \section*{Awards}
+    Stephen Bowater Memorial Scholarship\\
     University of Otago 150th Entrance Scholarship\\
-    Stephen Bowater Memorial Scholarship
+    University of Otago Scholarship in Science
     \bigskip
     
   
@@ -146,29 +157,24 @@ Software Engineer who enjoys collaboration, problem solving, and making things.
     \bigskip
     \bigskip
     \bigskip
-    \bigskip
-    \bigskip
-    \bigskip
-    \bigskip
-    \bigskip
-    \bigskip
-    \bigskip
-    \bigskip
-    \bigskip
-    \bigskip
-    \bigskip
-    \bigskip
 \setlength{\parindent}{0pt}
 \begin{minipage}[t]{\rightcolwidth}
-\begin{center}\fontfamily{\sfdefault}\selectfont \color{black!70}
-{\small David Brockbank\icon{\faEnvelopeO}{cvgreen}{} davebrockbank02@gmail.com  \icon{\faPhone}{cvgreen}{} (+64) 21493283 \newline\icon{\faAt}{cvgreen}{} \protect\url{https://davebroc.github.io/}
-}
+
+\fontfamily{\sfdefault}\selectfont \color{black!70}
+{\begin{center}\small 
+    \href{mailto:davebrockbank02@gmail.com}{\icon{\faEnvelopeO}{cvgreen}{} davebrockbank02@gmail.com}  
+    \href{tel:021493283}{\icon{\faPhone}{cvgreen}{} (+64) 21493283}  
+ \end{center}
+\begin{center}
+    \href{https://davebroc.github.io/}{\icon{\faGlobe}{cvgreen}{} https://davebroc.github.io/}
 \end{center}
+}
 \end{minipage}
 
 
+
     
-    \end{paracol}
+    % \end{paracol}
     
     \end{document}
 
