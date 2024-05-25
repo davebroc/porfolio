@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { filesPath, iconsPath } from '../util/paths';
 
 import Scene from '../Scene';
-import createPDF from '../PDF/pdf';
+// import createPDF from '../PDF/pdf';
 
 type Props = {}
 
@@ -58,7 +58,7 @@ export default function WelcomeScreen({ }: Props) {
                             </button>
                          </a>
 
-                            {createPDF()}
+                            {/* {createPDF()} */}
                             < button className=" bg-blue-600 p-2 rounded-md hover:text-gray-700" onClick={closePopup}>
                                 Okay
                             </button>
