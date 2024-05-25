@@ -81,7 +81,7 @@ const ThreeScene: React.FC = () => {
 
             const textGeometryName = new TextGeometry('David Brockbank', fontProperties);
             const textGeometryTitle = new TextGeometry('Software Engineer', fontProperties);
-            const textGeometryEmail = new TextGeometry('davebrockbank02@gmail.com', fontProperties);
+            const textGeometryEmail = new TextGeometry('davbrockbank@gmail.com', fontProperties);
 
             const textMesh = new THREE.Mesh(textGeometryName, textMaterial);
             textMesh.applyMatrix4(new THREE.Matrix4().scale(new THREE.Vector3(10, 10, 10)));

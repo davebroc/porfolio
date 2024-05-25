@@ -3,7 +3,7 @@
 Portfolio website built using Three.js, React, and TypeScript.
 
 ## Contact
-For enquiries, please email <a href="mailto:davebrockbank02@gmail.com">davebrockbank02@gmail.com</a>
+For enquiries, please email <a href="mailto:davbrockbank@gmail.com">davbrockbank@gmail.com</a>
 
 ## Features
 

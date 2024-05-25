@@ -5,7 +5,7 @@ export default function Footer() {
                 All rights reserved
             </p>
             <div className='absolute flex  m-0 top-1 right-1'>
-                <a href='mailto:davebrockbank02@gmail.com' target="_blank">
+                <a href='mailto:davbrockbank@gmail.com' target="_blank">
                     <img className='w-10 h-10 m-2' src='/icons/email.svg' alt='Email' />
                 </a>
                 <a href='https://github.com/davebroc' target="_blank">
