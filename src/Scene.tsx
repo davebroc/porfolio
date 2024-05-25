@@ -191,7 +191,7 @@ const ThreeScene: React.FC = () => {
         <div className="absolute" ref={sceneRef}>
             <div className='relative'>
                 {planetProperties.map(planet => planet.name === currentPlanet && (
-                    <> {planet.content}</>
+                    <div className='!bg-opacity-100'> {planet.content}</div>
                 ))
                 }
             </div>
