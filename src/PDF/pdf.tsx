@@ -11,7 +11,7 @@ try {
     % withoutsidebar
     \\usepackage[utf8]{inputenc}
     \\usepackage[default]{raleway}
-    \\usepackage[margin=1cm, a4paper]{geometry}
+    \\usepackage[margin=3cm, a4paper]{geometry}
     \\usepackage{xcolor}
     \\hypersetup{
         colorlinks,
@@ -19,82 +19,27 @@ try {
         citecolor={blue!50!black},
         urlcolor={blue!80!black}
     }
-    %------------------------------------------------------------------ Variablen
-    
-    \\newlength{\\rightcolwidth}
-    \\newlength{\\leftcolwidth}
-    \\setlength{\\leftcolwidth}{0.23\\textwidth}
-    \\setlength{\\rightcolwidth}{0.75\\textwidth}
-    
-    %------------------------------------------------------------------
-    \\title{New Simple CV}
+    \\title{CV}
     \\author{\\LaTeX{} Ninja}
-    \\date{June 2019}
-    
+    \\date{2023}
     \\pagestyle{empty}
     \\begin{document}
     
     
     \\thispagestyle{empty}
-    \\section*{Start}
-    
     \\simpleheader{headercolour}{David}{Brockbank}{Software Engineer}{white}
-    
-    
-    % this has to be here so the paracols starts..
-    \\subsection*{}
-    \\vspace{4em}
-    
-    \\setlength{\\columnsep}{1.5cm}
-    \\columnratio{0.23}[0.75]
-    \\begin{paracol}{2}
-    \\hbadness5000
-    %\\backgroundcolor{c[1]}[rgb]{1,1,0.8} % cream yellow for column-1 %\\backgroundcolor{g}[rgb]{0.8,1,1} % \\backgroundcolor{l}[rgb]{0,0,0.7} % dark blue for left margin
-    
-    \\paracolbackgroundoptions
-    
-    % 0.9,0.9,0.9 -- 0.8,0.8,0.8
-    
-    
-    \\footnotesize
-    {\\setasidefontcolour
-    \\flushright
-    \\begin{center}
-    \\end{center}
-    
-    \\bg{cvgreen}{white}{About me}\\\\[0.5em]
-    
-    {\\footnotesize
-Software Engineer who enjoys collaboration, problem solving, and making things.
-}
-    
-    \\bigskip
-    
-    \\bg{cvgreen}{white}{Interests}\\\\[0.5em]
-    Training in the gym,
-    video games, 
-    socializing, 
-    snowboarding, 
-    tramping, 
-    physics,
-    and 
-    space
-    \\bigskip
-
-    \\bg{cvgreen}{white}{Porfolio}\\\\[0.5em]
-    \\href{https://davebroc.github.io/}{https://davebroc.github.io/}
-
-  
-    \\phantom{turn the page}
-    
-    \\phantom{turn the page}
-    }
-    %-----------------------------------------------------------
-    \\switchcolumn
-    
+    \\vspace{5em}
     \\small
+    
+    \\begin{minipage}[t]{1\\textwidth}
+    \\section*{About}
+    Enjoyer of collaborative problem solving.\\\\
+    Professional front-end, consulting, and tutoring experience.\\\\
+    CAD and electronic hobbyist.
+    \\end{minipage}    
+    \\bigskip
 
-     \\begin{minipage}[t]{0.7\\textwidth}
+    \\begin{minipage}[t]{1\\textwidth}
     \\section*{Experience}
     ${experiences.map(experience => `
     \\textbf{${experience.company}}\\\\
@@ -102,11 +47,9 @@ Software Engineer who enjoys collaboration, problem solving, and making things.
     ${experience.tasks.replace('#', "\\#")}\\\\
     ` ).join("")}  
     \\end{minipage}    
-    
     \\bigskip
     
-    \\begin{minipage}[t]{0.7\\textwidth}
-    
+    \\begin{minipage}[t]{1\\textwidth}
     \\section*{Education}
     ${educations.map(education => `
     \\textbf{${education.provider}}\\\\
@@ -115,17 +58,14 @@ Software Engineer who enjoys collaboration, problem solving, and making things.
     GPA: ${education.gpa}\\\\
     ` )}
     \\end{minipage}
-      
     \\bigskip
     
-    \\begin{minipage}[t]{0.7\\textwidth}
+    \\begin{minipage}[t]{1\\textwidth}
     \\section*{Awards}
     Stephen Bowater Memorial Scholarship\\\\
     University of Otago 150th Entrance Scholarship\\\\
     University of Otago Scholarship in Science
     \\bigskip
-    
-  
     
     \\end{minipage}\\hfill
     \\bigskip
@@ -133,19 +73,9 @@ Software Engineer who enjoys collaboration, problem solving, and making things.
     \\bigskip
     \\bigskip
     \\bigskip
-    \\bigskip
-    \\bigskip
-    \\bigskip
-    \\bigskip
-    \\bigskip
-    \\bigskip
-    \\bigskip
-    \\bigskip
-    \\bigskip
-    \\bigskip
 \\setlength{\\parindent}{0pt}
-\\begin{minipage}[t]{\\rightcolwidth}
 
+\\begin{minipage}[t]{1\\textwidth}
 \\fontfamily{\\sfdefault}\\selectfont \\color{black!70}
 {\\begin{center}\\small 
     \\href{mailto:davebrockbank02@gmail.com}{\\icon{\\faEnvelopeO}{cvgreen}{} davebrockbank02@gmail.com}  
@@ -157,12 +87,7 @@ Software Engineer who enjoys collaboration, problem solving, and making things.
 }
 \\end{minipage}
 
-
-
-    
-    \\end{paracol}
-    
-    \\end{document}
+\\end{document}
 
 
 `;
