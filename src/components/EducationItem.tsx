@@ -20,6 +20,8 @@ export default function EducationItem({ item }: EducationItemProps) {
                 <p className='mb-3'>{item.majorMinor}</p>
                 <p className='mb-3'>GPA: {item.gpa}</p>
                 <a href={item.transcriptPath} target="_blank" className='text-blue-400 underline'>Academic Transcript</a>
+                <br/>
+                <a href={item.degreePath} target="_blank" className='text-blue-400 underline'>Degree</a>
             </div>
         </div >
     );
