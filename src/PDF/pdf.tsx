@@ -21,7 +21,7 @@ export default function createPDF() {
     }
     \\title{CV}
     \\author{\\LaTeX{} Ninja}
-    \\date{2023}
+    \\date{2024}
     \\pagestyle{empty}
     \\begin{document}
     
@@ -82,7 +82,8 @@ export default function createPDF() {
     \\href{tel:021493283}{\\icon{\\faPhone}{cvgreen}{} (+64) 21493283}  
  \\end{center}
 \\begin{center}
-    \\href{https://davebroc.github.io/}{\\icon{\\faGlobe}{cvgreen}{} https://davebroc.github.io/}
+    \\href{https://davebroc.github.io/}{\\icon{\\faGlobe}{cvgreen}{}davebroc.github.io/}
+    \\href{https://www.linkedin.com/in/david-brockbank/}{\\icon{\\faLinkedin}{cvgreen}{}linkedin.com/in/david-brockbank/}
 \\end{center}
 }
 \\end{minipage}
