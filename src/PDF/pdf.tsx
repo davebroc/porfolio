@@ -2,11 +2,11 @@ import { educations } from "../data/educations";
 import { experiences } from "../data/experiences";
 
 export default function createPDF() {
-    
-// Write data to file
-try {
-    // Data to be written to the file
-    var output = `\\documentclass[lighthipster]{simplehipstercv}
+
+    // Write data to file
+    try {
+        // Data to be written to the file
+        var output = `\\documentclass[lighthipster]{simplehipstercv}
     % available options are: darkhipster, lighthipster, pastel, allblack, grey, verylight, withoutsidebar
     % withoutsidebar
     \\usepackage[utf8]{inputenc}
@@ -42,8 +42,8 @@ try {
     \\begin{minipage}[t]{1\\textwidth}
     \\section*{Experience}
     ${experiences.map(experience => `
-    \\textbf{${experience.company}}\\\\
     \\textbf{${experience.title}}\\\\
+    \\textbf{${experience.company}}\\\\
     ${experience.tasks.replace('#', "\\#")}\\\\
     ` ).join("")}  
     \\end{minipage}    
@@ -52,8 +52,8 @@ try {
     \\begin{minipage}[t]{1\\textwidth}
     \\section*{Education}
     ${educations.map(education => `
-    \\textbf{${education.provider}}\\\\
     \\textbf{${education.qualification}}\\\\
+    \\textbf{${education.provider}}\\\\
     ${education.majorMinor}\\\\
     GPA: ${education.gpa}\\\\
     ` )}
@@ -91,35 +91,35 @@ try {
 
 
 `;
-    
-    // Create a Blob with the output
-    const blob = new Blob([output], { type: 'text/plain' });
 
-    // Create a URL for the Blob
-    const blobUrl = URL.createObjectURL(blob);
+        // Create a Blob with the output
+        const blob = new Blob([output], { type: 'text/plain' });
 
-    // Function to handle download
-    const handleDownload = () => {
-        // Create a link element
-        const link = document.createElement('a');
-        link.href = blobUrl;
-        link.download = 'David_Brockbank_CV.tex'; // Set the file name
-        document.body.appendChild(link);
+        // Create a URL for the Blob
+        const blobUrl = URL.createObjectURL(blob);
 
-        // Trigger a click event on the link to start the download
-        link.click();
+        // Function to handle download
+        const handleDownload = () => {
+            // Create a link element
+            const link = document.createElement('a');
+            link.href = blobUrl;
+            link.download = 'David_Brockbank_CV.tex'; // Set the file name
+            document.body.appendChild(link);
 
-        // Clean up
-        document.body.removeChild(link);
-    };
-    return(<>
+            // Trigger a click event on the link to start the download
+            link.click();
+
+            // Clean up
+            document.body.removeChild(link);
+        };
+        return (<>
             <button onClick={handleDownload}>Download LaTeX</button>
-    </>)
-} catch (error) {
-    console.error('Error writing to file:', error);
-}
+        </>)
+    } catch (error) {
+        console.error('Error writing to file:', error);
+    }
 
-return(<></>)
+    return (<></>)
 
 }
 
