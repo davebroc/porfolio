@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { filesPath, iconsPath } from '../util/paths';
 
 import Scene from '../Scene';
-// import createPDF from '../PDF/pdf';
+import createPDF from '../PDF/pdf';
 
 type Props = {}
 
@@ -52,13 +52,13 @@ export default function WelcomeScreen({ }: Props) {
                         </section>
 
                         <nav className='flex  justify-between smt-2'>
-                         <a href={filesPath + "David_Brockbank_CV.pdf"} target="_blank" >
-                            < button className=" bg-gray-700 p-2 rounded-md hover:text-gray-200">
-                                PDF Version
-                            </button>
-                         </a>
+                            <a href={filesPath + "David_Brockbank_CV.pdf"} target="_blank" >
+                                < button className=" bg-gray-700 p-2 rounded-md hover:text-gray-200">
+                                    PDF Version
+                                </button>
+                            </a>
 
-                            {/* {createPDF()} */}
+                            {createPDF()}
                             < button className=" bg-blue-600 p-2 rounded-md hover:text-gray-700" onClick={closePopup}>
                                 Okay
                             </button>
@@ -68,7 +68,7 @@ export default function WelcomeScreen({ }: Props) {
                 </div >
             )
             }
-        
+
             <Scene />
         </>
     )

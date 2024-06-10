@@ -1,5 +1,6 @@
 import { educations } from "../data/educations";
 import { experiences } from "../data/experiences";
+import calcDuration from "../util/calcDuration";
 
 export default function createPDF() {
 
@@ -43,7 +44,8 @@ export default function createPDF() {
     \\section*{Experience}
     ${experiences.map(experience => `
     \\textbf{${experience.title}}\\\\
-    \\textbf{${experience.company}}\\\\
+    \\textbf{${experience.company}}\\textbullet{ ${experience.type}}\\\\
+    ${experience.start} - ${experience.end}\\textbullet{ ${calcDuration(experience.start, experience.end)}}\\\\
     ${experience.tasks.replace('#', "\\#")}\\\\
     ` ).join("")}  
     \\end{minipage}    
@@ -68,7 +70,6 @@ export default function createPDF() {
     \\bigskip
     
     \\end{minipage}\\hfill
-    \\bigskip
     \\bigskip
     \\bigskip
     \\bigskip

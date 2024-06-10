@@ -1,5 +1,6 @@
 import { imagesPath } from "../util/paths";
 import { Experience } from '../data/experiences';
+import calcDuration from "../util/calcDuration";
 
 type ExperienceItemProps = {
     item: Experience;
@@ -13,8 +14,13 @@ export default function ExperienceItem({ item }: ExperienceItemProps) {
             }
             <div className='w-11/12 m-auto mb-5 mt-4'>
 
-                <h3 className='text-xl'>{item.title}</h3>
-                <h2 className='text-lg font-bold mb-1'>{item.company}</h2>
+                <h3 className='text-xl font-bold'>{item.title}</h3>
+                <div className="flex items-center  mb-1">
+                    <h2 className='text-lg'>{item.company} &#183;&nbsp;</h2>
+                    <p className='text-sm'>{item.type}</p>
+                </div>
+                <h4 className='text-sm mb-1 text-gray-700'>{item.start} - {item.end} &#183;&nbsp;{calcDuration(item.start, item.end)}</h4>
+                <h4 className='text-sm mb-1 text-gray-700'>{item.location}</h4>
                 <p>
                     {item.tasks}
                 </p>
