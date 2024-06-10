@@ -12,7 +12,7 @@ export default function createPDF() {
     % withoutsidebar
     \\usepackage[utf8]{inputenc}
     \\usepackage[default]{raleway}
-    \\usepackage[margin=3cm, a4paper]{geometry}
+    \\usepackage[top=3cm, bottom=1cm, left=2cm, right=2cm, a4paper]{geometry}
     \\usepackage{xcolor}
     \\hypersetup{
         colorlinks,
@@ -44,8 +44,8 @@ export default function createPDF() {
     \\section*{Experience}
     ${experiences.map(experience => `
     \\textbf{${experience.title}}\\\\
-    \\textbf{${experience.company}}\\textbullet{ ${experience.type}}\\\\
-    ${experience.start} - ${experience.end}\\textbullet{ ${calcDuration(experience.start, experience.end)}}\\\\
+    \\textbf{${experience.company} }\\textbullet{ ${experience.type}}\\\\
+    ${experience.start} - ${experience.end} \\textbullet{ ${calcDuration(experience.start, experience.end)}}\\\\
     ${experience.tasks.replace('#', "\\#")}\\\\
     ` ).join("")}  
     \\end{minipage}    
@@ -68,12 +68,9 @@ export default function createPDF() {
     University of Otago 150th Entrance Scholarship\\\\
     University of Otago Scholarship in Science
     \\bigskip
+    \\bigskip
     
     \\end{minipage}\\hfill
-    \\bigskip
-    \\bigskip
-    \\bigskip
-    \\bigskip
 \\setlength{\\parindent}{0pt}
 
 \\begin{minipage}[t]{1\\textwidth}
