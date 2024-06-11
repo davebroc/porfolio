@@ -44,7 +44,7 @@ export default function createPDF() {
     \\section*{Experience}
     ${experiences.map(experience => `
     \\textbf{${experience.title}}\\\\
-    \\textbf{${experience.company} }\\textbullet{ ${experience.type}}\\\\
+    \\textbf{${experience.company.replace('&', "\\&")} }\\textbullet{ ${experience.type}}\\\\
     ${experience.start} - ${experience.end} \\textbullet{ ${calcDuration(experience.start, experience.end)}}\\\\
     ${experience.tasks.replace('#', "\\#")}\\\\
     ` ).join("")}  

@@ -86,7 +86,7 @@ const experiences = [
         title: "Digital Archiver",
     },
     {
-        company: "Brockbank Properties",
+        company: "S & M Property Management Limited",
         imagePath: undefined,
         start: "Nov 2016",
         end: "Dec 2022",
