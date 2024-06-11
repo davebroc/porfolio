@@ -70,7 +70,7 @@ const experiences = [
         end: "Mar 2023",
         type: "Internship",
         location: "Dunedin, New Zealand",
-        tasks: `Design and development on a agricultural farming PWA for Agriganics. 
+        tasks: `Design and development on a agricultural farming PWA for Agriganics in React. 
         Implemented extensive offline capabilities, workflow design, and front-end development. 
         Focus on defining, creating, and refining user experience on mobile and desktop environments.`,
         title: "Software developer",
