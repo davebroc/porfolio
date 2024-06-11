@@ -34,7 +34,7 @@ export default function createPDF() {
     
     \\begin{minipage}[t]{1\\textwidth}
     \\section*{About}
-    Enjoyer of collaborative problem solving.\\\\
+    Enjoyer of collaborative problem solving, experienced in Java, C\\#, Javascript, React, Python, and SQL.\\\\
     Professional front-end, consulting, and tutoring experience.\\\\
     CAD and electronic hobbyist.
     \\end{minipage}    
