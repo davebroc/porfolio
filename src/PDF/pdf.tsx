@@ -34,9 +34,9 @@ export default function createPDF() {
     
     \\begin{minipage}[t]{1\\textwidth}
     \\section*{About}
+    Graduate software engineer with a year professional experience in the software development industry.\\\\
     Enjoyer of collaborative problem solving, experienced in Java, C\\#, Javascript, React, Python, and SQL.\\\\
-    Professional front-end, consulting, and tutoring experience.\\\\
-    CAD and electronic hobbyist.
+    Projects done with C, C++, Python, and Java. CAD and electronic hobbyist.
     \\end{minipage}    
     \\bigskip
 

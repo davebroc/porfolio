@@ -50,7 +50,8 @@ const experiences = [
         end: "Nov 2023",
         type: "Internship",
         location: "Dunedin, New Zealand",
-        tasks: `Researched potential technologies to be used for an upgrade of internal lending software.`,
+        tasks: `Researched potential technologies to be used for an upgrade of internal lending software.
+                Used C#, .NET, and SQL for main technology stack but researched Python, Django, and Vue.`,
         title: "Software Engineer Intern",
     },
     {
@@ -60,7 +61,7 @@ const experiences = [
         end: "Jun 2023",
         type: "Part-time",
         location: "Dunedin, New Zealand",
-        tasks: `Guided students completing lab work for COSC202 - Software Development.`,
+        tasks: `Guided students completing lab work for COSC202 - Software Development. Most of the work was in Java.`,
         title: "Computer Science Demonstrator",
     },
     {
@@ -70,7 +71,7 @@ const experiences = [
         end: "Mar 2023",
         type: "Internship",
         location: "Dunedin, New Zealand",
-        tasks: `Design and development on a agricultural farming PWA for Agriganics in React. 
+        tasks: `Design and development on a agricultural farming PWA for Agriganics in Javascript, React, and SQL. 
         Implemented extensive offline capabilities, workflow design, and front-end development. 
         Focus on defining, creating, and refining user experience on mobile and desktop environments.`,
         title: "Software developer",
