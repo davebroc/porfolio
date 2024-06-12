@@ -39,9 +39,9 @@ const experiences = [
         location: "Wellington, New Zealand",
         tasks: `Development and consulting for Inland Revenue's tax software. 
         Worked with non-technical client to discuss issues and requirements. 
-        Implemented features and fixes in C# and SQL, worked closely with domain specialists to extensively test before releasing to production.
+        Implemented features and fixes in C#, .NET, and SQL, worked closely with domain specialists to extensively test before releasing to production.
         Evaluated potential features against system capabilities and clearly communicated them to the client. `,
-        title: "Implementation Consultant",
+        title: "Software Implementation Consultant",
     },
     {
         company: "MTF Finance",
